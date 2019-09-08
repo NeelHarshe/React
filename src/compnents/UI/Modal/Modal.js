@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './Modal.css'
-import Aux from '../../../hoc/Aux'
+import wrap from '../../../hoc/wrap'
 import Backdrop from '../Backdrop/Backdrop'
 const modal = (props) => (
     
-    <Aux>
+    <wrap>
         <Backdrop show = {props.show} clicked = {props.modalClosed}/>
         <div className={classes.Modal}
             style={{
@@ -12,7 +12,7 @@ const modal = (props) => (
                 opacity: props.show ? '1' : '0'
             }}>
             {props.children}</div>
-    </Aux>
+    </wrap>
 ) 
 
 export default modal;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Aux from '../../../hoc/Aux'
+import wrap from '../../../hoc/wrap'
 import Button from '../../UI/Button/Button'
 const OrderSummary = (props) => {
     const ingridientSummary = Object.keys(props.ingridients)
@@ -9,7 +9,7 @@ const OrderSummary = (props) => {
                                   )
                               })
     return (
-        <Aux>
+        <wrap>
             <h3>Your Order</h3>
             <p>You selected the following ingridients</p>
             <ul>
@@ -19,7 +19,7 @@ const OrderSummary = (props) => {
             <p>Continue to Checkout?</p>
             <Button buttontype="Success" clicked = {props.purchasecontinued}>Continue</Button>
             <Button buttontype="Danger" clicked = {props.purchasecancel}>Cancel</Button>    
-        </Aux>
+        </wrap>
     )
 }
 
